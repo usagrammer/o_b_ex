@@ -1,4 +1,4 @@
-<%= form_with model: post, class: :form, local: true do |form| %>
+<%= form_with model: post, class: :form, local: true, id: 'post-form' do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
@@ -8,6 +8,8 @@
 
   <%= form.label :image %>
   <%= form.file_field :images, name: 'post[images][]' %>
+
+  <div id="previews"></div>
 
   <%= form.submit '投稿する', class: :form__btn %>
 
